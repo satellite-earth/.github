@@ -69,3 +69,11 @@ unlink:
 	cd private-node && yarn unlink
 	cd community-ui && yarn unlink
 	cd dashboard-ui && yarn unlink
+
+watch:
+	cd core && yarn build --watch > /dev/null &\
+	cd public-node && yarn build --watch > /dev/null &\
+	cd private-node && yarn build --watch > /dev/null &\
+	cd community-ui && yarn build --watch > /dev/null &\
+	cd dashboard-ui && yarn build --watch > /dev/null &\
+	wait
