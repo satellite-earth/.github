@@ -32,6 +32,7 @@ link-create:
 # attach the links to packages the depend on them
 link-attach:
 	cd public-node && yarn link "@satellite-earth/core"
+	cd public-node && yarn link "@satellite-earth/community-ui"
 	cd private-node && yarn link "@satellite-earth/core"
 	cd private-node && yarn link "@satellite-earth/dashboard-ui"
 	cd desktop && yarn link "@satellite-earth/private-node"
