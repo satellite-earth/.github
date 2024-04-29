@@ -83,6 +83,7 @@ watch:
 
 switch-dev:
 	cd core && git checkout dev
+	cd desktop && git checkout dev
 	cd public-node && git checkout dev
 	cd private-node && git checkout dev
 	cd community-ui && git checkout dev
