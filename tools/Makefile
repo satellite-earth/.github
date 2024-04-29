@@ -37,6 +37,7 @@ link-attach:
 	cd private-node && yarn link "@satellite-earth/dashboard-ui"
 	cd desktop && yarn link "@satellite-earth/private-node"
 	cd desktop && yarn link "@satellite-earth/community-ui"
+	cd desktop && yarn link "@satellite-earth/dashboard-ui"
 
 # install all dependencies
 install:
