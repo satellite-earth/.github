@@ -43,7 +43,7 @@ link-attach:
 # install all dependencies
 install:
 	cd core && yarn install
-	# cd desktop && yarn install
+	cd desktop && yarn install
 	cd public-node && yarn install
 	cd private-node && yarn install
 	cd community-ui && yarn install
