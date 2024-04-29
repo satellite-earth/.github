@@ -1,4 +1,4 @@
-setup: setup-workspace clone install build
+setup: setup-workspace clone install
 update: pull install build
 dev: switch-dev update
 
