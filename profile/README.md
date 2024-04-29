@@ -15,6 +15,7 @@ make setup
 Avaliable commands
 - `make setup` Clone all repos, install dependencies, and build all packages
 - `make update` Pull all repos
+- `make dev` Pull and checkout dev branch
 - `make link` Link package dependencies
 - `make watch` Build all packages and watch for changes
 - `make clean` Remove npm links
