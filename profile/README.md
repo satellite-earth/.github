@@ -9,7 +9,7 @@ If you want to setup all the repos and play around with them locally you can use
 # download the Makefile
 wget https://raw.githubusercontent.com/satellite-earth/.github/master/tools/Makefile
 # clone, install, link, and build repos
-make setup
+make setup dev
 ```
 
 Avaliable commands
