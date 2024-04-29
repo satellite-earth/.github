@@ -3,7 +3,7 @@
 
 ## Setup Local development
 
-If you want to setup all the repos and play around with them locally you can use the handy [Makefile](../tools/Makefile)
+If you want to setup all the repos and play around with them locally you can use the handy [Makefile](https://github.com/satellite-earth/.github/blob/master/tools/Makefile)
 
 ```sh
 # download the Makefile
