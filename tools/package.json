@@ -1,0 +1,12 @@
+{
+	"name": "satellite",
+	"private": true,
+	"workspaces": [
+		"core",
+		"desktop",
+		"dashboard-ui",
+		"community-ui",
+		"public-node",
+		"private-node"
+	]
+}
