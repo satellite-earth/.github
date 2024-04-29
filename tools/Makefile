@@ -51,7 +51,7 @@ install:
 # build all packages
 build:
 	cd core && yarn build
-	# cd desktop && yarn build
+	cd desktop && yarn build
 	cd public-node && yarn build
 	cd private-node && yarn build
 	cd community-ui && yarn build
