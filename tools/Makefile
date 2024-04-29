@@ -1,5 +1,6 @@
 setup: clone link install build
 update: pull link install build
+dev: switch-dev update
 
 # setup repos
 clone:
@@ -79,3 +80,10 @@ watch:
 	cd community-ui && yarn build --watch > /dev/null &\
 	cd dashboard-ui && yarn build --watch > /dev/null &\
 	wait
+
+switch-dev:
+	cd core && git checkout dev
+	cd public-node && git checkout dev
+	cd private-node && git checkout dev
+	cd community-ui && git checkout dev
+	cd dashboard-ui && git checkout dev
