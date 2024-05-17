@@ -4,7 +4,7 @@
 	"workspaces": [
 		"core",
 		"desktop",
-		"community-ui",
+		"web-ui",
 		"public-node",
 		"private-node"
 	]
