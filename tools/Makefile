@@ -8,7 +8,7 @@ clone:
 	if [ ! -d "desktop" ]; then git clone https://github.com/satellite-earth/desktop.git; fi
 	if [ ! -d "public-node" ]; then git clone https://github.com/satellite-earth/public-node.git; fi
 	if [ ! -d "private-node" ]; then git clone https://github.com/satellite-earth/private-node.git; fi
-	if [ ! -d "community-ui" ]; then git clone https://github.com/satellite-earth/community-ui.git; fi
+	if [ ! -d "web-ui" ]; then git clone https://github.com/satellite-earth/web-ui.git; fi
 
 setup-workspace:
 	wget https://raw.githubusercontent.com/satellite-earth/.github/master/tools/package.json -O package.json
@@ -22,7 +22,7 @@ pull:
 	cd desktop && git pull
 	cd public-node && git pull
 	cd private-node && git pull
-	cd community-ui && git pull
+	cd web-ui && git pull
 
 # install all dependencies
 install:
@@ -34,7 +34,7 @@ build:
 	cd desktop && yarn build
 	cd public-node && yarn build
 	cd private-node && yarn build
-	cd community-ui && yarn build
+	cd web-ui && yarn build
 
 # login to the github registry using your github username and private access token
 # this is only nessisary if you want to publish package versions from your local machine
@@ -50,7 +50,7 @@ watch:
 	cd desktop && yarn build --watch > /dev/null &\
 	cd public-node && yarn build --watch > /dev/null &\
 	cd private-node && yarn build --watch > /dev/null &\
-	cd community-ui && yarn build --watch > /dev/null &\
+	cd web-ui && yarn build --watch > /dev/null &\
 	wait
 
 switch-dev:
@@ -58,4 +58,4 @@ switch-dev:
 	cd desktop && git checkout dev
 	cd public-node && git checkout dev
 	cd private-node && git checkout dev
-	cd community-ui && git checkout dev
+	cd web-ui && git checkout dev
