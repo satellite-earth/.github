@@ -6,6 +6,7 @@
 		"desktop",
 		"web-ui",
 		"public-node",
-		"private-node"
+		"personal-node",
+		"multiplexer"
 	]
 }
