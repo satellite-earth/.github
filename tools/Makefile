@@ -4,12 +4,12 @@ dev: switch-dev update
 
 # setup repos
 clone:
-	if [ ! -d "core" ]; then git clone git@github.com/satellite-earth/core.git; fi
-	if [ ! -d "desktop" ]; then git clone git@github.com/satellite-earth/desktop.git; fi
-	if [ ! -d "public-node" ]; then git clone git@github.com/satellite-earth/public-node.git; fi
+	if [ ! -d "core" ]; then git clone git@github.com:satellite-earth/core.git; fi
+	if [ ! -d "desktop" ]; then git clone git@github.com:satellite-earth/desktop.git; fi
+	if [ ! -d "public-node" ]; then git clone git@github.com:satellite-earth/public-node.git; fi
 	if [ ! -d "personal-node" ]; then git clone git@github.com:satellite-earth/personal-node.git; fi
-	if [ ! -d "web-ui" ]; then git clone git@github.com/satellite-earth/web-ui.git; fi
-	if [ ! -d "multiplexer" ]; then git clone git@github.com:satellite-earth/multiplexer.git
+	if [ ! -d "web-ui" ]; then git clone git@github.com:satellite-earth/web-ui.git; fi
+	if [ ! -d "multiplexer" ]; then git clone git@github.com:satellite-earth/multiplexer.git; fi
 
 setup-workspace:
 	wget https://raw.githubusercontent.com/satellite-earth/.github/master/tools/package.json -O package.json
