@@ -12,7 +12,8 @@ clone:
 	if [ ! -d "multiplexer" ]; then git clone git@github.com:satellite-earth/multiplexer.git; fi
 
 setup-workspace:
-	wget https://raw.githubusercontent.com/satellite-earth/.github/master/tools/package.json -O package.json
+	wget https://raw.githubusercontent.com/satellite-earth/.github/master/tools/pnpm-workspace.yaml -O pnpm-workspace.yaml
+	wget https://raw.githubusercontent.com/satellite-earth/.github/master/tools/.npmrc -O .npmrc
 
 update-make:
 	wget https://raw.githubusercontent.com/satellite-earth/.github/master/tools/Makefile -O Makefile
@@ -28,34 +29,21 @@ pull:
 
 # install all dependencies
 install:
-	yarn install
+	pnpm install
 
 # build all packages
 build:
-	cd core && yarn build
-	cd desktop && yarn build
-	cd public-node && yarn build
-	cd personal-node && yarn build
-	cd multiplexer && yarn build
-	cd web-ui && yarn build
+	cd core && pnpm build
+	cd desktop && pnpm build
+	cd public-node && pnpm build
+	cd personal-node && pnpm build
+	cd multiplexer && pnpm build
+	cd web-ui && pnpm build
 
 # login to the github registry using your github username and personal access token
 # this is only nessisary if you want to publish package versions from your local machine
 npm-login:
 	if ! npm whoami --registry=http://npm.pkg.github.com; then echo "Login to npm.pkg.github.com using github username and access token" && npm login --scope=@satellite-earth --auth-type=legacy --registry=https://npm.pkg.github.com; fi
-
-# general cleanup task
-clean:
-	rm -rf node_modules
-
-watch:
-	cd core && yarn build --watch > /dev/null &\
-	cd desktop && yarn build --watch > /dev/null &\
-	cd public-node && yarn build --watch > /dev/null &\
-	cd personal-node && yarn build --watch > /dev/null &\
-	cd multiplexer && yarn build --watch > /dev/null &\
-	cd web-ui && yarn build --watch > /dev/null &\
-	wait
 
 switch-dev:
 	cd core && git checkout dev
@@ -64,3 +52,16 @@ switch-dev:
 	cd personal-node && git checkout dev
 	cd multiplexer && git checkout dev
 	cd web-ui && git checkout dev
+
+dev-desktop:
+	cd core && pnpm build --watch > /dev/null &\
+	cd personal-node && pnpm build --watch > /dev/null &\
+	cd web-ui && pnpm dev > /dev/null &\
+	cd desktop && pnpm rebuild && OVERRIDE_UI=http://localhost:5173 pnpm dev > /dev/null &\
+	wait
+
+dev-node:
+	cd core && pnpm build --watch > /dev/null &\
+	cd web-ui && pnpm dev > /dev/null &\
+	cd personal-node && pnpm rebuild && REDIRECT_APP_URL=http://localhost:5173 pnpm dev > /dev/null &\
+	wait
