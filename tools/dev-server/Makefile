@@ -1,11 +1,15 @@
-setup: clone checkout install build
-update: checkout restore pull install build
+setup: update-workspace clone checkout install build
+update: update-workspace checkout restore pull install build
 
 start-public:
-	cd public-node && pnpm rebuild && pnpm start
+	cd public-node && pnpm install && pnpm rebuild && pnpm start
 
 start-personal:
-	cd personal-node && pnpm rebuild && pnpm dev
+	cd personal-node && pnpm install && pnpm rebuild && pnpm dev
+
+update-workspace:
+	wget -nv https://raw.githubusercontent.com/satellite-earth/.github/master/tools/pnpm-workspace.yaml -O pnpm-workspace.yaml
+	wget -nv https://raw.githubusercontent.com/satellite-earth/.github/master/tools/.npmrc -O .npmrc
 
 clone:
 	if [ ! -d "core" ]; then git clone https://github.com/satellite-earth/core.git; fi
