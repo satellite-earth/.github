@@ -19,3 +19,16 @@ Avaliable commands
 - `make link` Link package dependencies
 - `make watch` Build all packages and watch for changes
 - `make clean` Remove npm links
+
+## Running Development Server
+
+*NOTE the dev server will run the latest code and will be unstable*
+
+*Minimum requirements: 1 CPU and >=2GB of RAM*
+
+1. Install [node](https://nodejs.org/en/download/package-manager) and [pnpm](https://pnpm.io/) on the server
+2. Download Makefile `wget https://raw.githubusercontent.com/satellite-earth/.github/master/tools/dev-server/Makefile`
+3. Setup repos `make setup`
+4. Start personal node `make start-personal` or public node `make start-public`
+
+`make update` will update the dev server and pull the latest changes
