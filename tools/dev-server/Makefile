@@ -5,7 +5,7 @@ start-public:
 	cd public-node && pnpm install && pnpm rebuild && pnpm start
 
 start-personal:
-	cd personal-node && pnpm install && pnpm rebuild && pnpm dev
+	cd personal-node && pnpm install && pnpm rebuild && pnpm start
 
 update-workspace:
 	wget -nv https://raw.githubusercontent.com/satellite-earth/.github/master/tools/pnpm-workspace.yaml -O pnpm-workspace.yaml
